@@ -1,0 +1,24 @@
+#VRML_SIM R2020b utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation -0.2853365431662199 -0.9122221912571918 -0.29399614098127047 1.7127950270372623
+  position -4.428260687521041 3.106493465394383 -0.2727257097090766
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  name "paper"
+  floorSize 2 2.5
+  floorAppearance Appearance {
+    texture ImageTexture {
+      url [
+        "C:/Users/Marek/Desktop/paper.jpg"
+      ]
+    }
+  }
+  wallHeight 0.01
+}
