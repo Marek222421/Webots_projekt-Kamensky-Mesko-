@@ -3,16 +3,25 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.2853365431662199 -0.9122221912571918 -0.29399614098127047 1.7127950270372623
-  position -4.428260687521041 3.106493465394383 -0.2727257097090766
+  orientation 0.009336809064639814 -0.9838212834034963 -0.17890921250396313 3.2782648971963066
+  position 0.03214804858703364 0.22922645526284252 -0.5532693161761851
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
 }
+TinkerbotsBase {
+  translation 0 0.03 0
+  downSlot TinkerbotsCube {
+  }
+  leftSlot TinkerbotsMotor {
+  }
+  rightSlot TinkerbotsMotor {
+  }
+}
 RectangleArena {
   name "paper"
-  floorSize 2 2.5
+  floorSize 1 1.5
   floorAppearance Appearance {
     texture ImageTexture {
       url [
