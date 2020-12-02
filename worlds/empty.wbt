@@ -3,16 +3,17 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.2853365431662199 -0.9122221912571918 -0.29399614098127047 1.7127950270372623
-  position -4.428260687521041 3.106493465394383 -0.2727257097090766
+  orientation 0.014318184555985592 0.9369098281512487 0.349277774134883 3.2458844891754186
+  position 0.03683814184619921 0.4747626379355194 -0.5384822757659042
 }
 TexturedBackground {
 }
 TexturedBackgroundLight {
 }
 RectangleArena {
+  translation 0 0.03 0
   name "paper"
-  floorSize 2 2.5
+  floorSize 1 1.5
   floorAppearance Appearance {
     texture ImageTexture {
       url [
@@ -21,4 +22,81 @@ RectangleArena {
     }
   }
   wallHeight 0.01
+}
+TinkerbotsBase {
+  translation 0.04 0.07 0
+  controller "my_controller"
+  downBSlot TinkerbotsFinger {
+  }
+  downCSlot TinkerbotsFinger {
+    rotation 0 0 1 1.5707996938995747
+  }
+  leftSlot TinkerbotsCube {
+    upCSlot TinkerbotsCubieTriangle {
+      rotation 0 0 1 -1.5707996938995747
+    }
+    upDSlot TinkerbotsCubieTriangle {
+    }
+    rightSlot TinkerbotsMotor {
+      rotation 0 0 1 1.5708003061004252
+      name "motor_left"
+      upASlot TinkerbotsCubieTriangle {
+        rotation 0 0 1 1.5707996938995747
+      }
+      upBSlot TinkerbotsCubieTriangle {
+        rotation 0 0 1 3.141592653589793
+      }
+      upCSlot TinkerbotsCubieTriangle {
+        rotation 0 0 1 1.5707996938995747
+      }
+      upDSlot TinkerbotsCubieTriangle {
+        rotation 0 0 1 -3.141592653589793
+      }
+      backSlot TinkerbotsAxle {
+        endSlot TinkerbotsWheel {
+        }
+      }
+    }
+    frontCSlot TinkerbotsCubieTriangle {
+      rotation 0 0 1 -1.5707996938995747
+    }
+    frontDSlot TinkerbotsCubieTriangle {
+    }
+  }
+  rightSlot TinkerbotsCube {
+    upASlot TinkerbotsCubieTriangle {
+      rotation 0 0 1 -1.5707996938995747
+    }
+    upBSlot TinkerbotsCubieTriangle {
+    }
+    leftSlot TinkerbotsMotor {
+      rotation 0 0 1 1.5707996938995747
+      name "motor_right"
+      upASlot TinkerbotsCubieTriangle {
+        rotation 0 0 1 1.5707996938995747
+      }
+      upBSlot TinkerbotsCubieTriangle {
+        rotation 0 0 1 -3.141592653589793
+      }
+      upCSlot TinkerbotsCubieTriangle {
+        rotation 0 0 1 1.5708003061004252
+      }
+      upDSlot TinkerbotsCubieTriangle {
+        rotation 0 0 1 3.141592653589793
+      }
+      frontSlot TinkerbotsAxle {
+        endSlot TinkerbotsWheel {
+        }
+      }
+    }
+    frontASlot TinkerbotsCubieTriangle {
+      rotation 0 0 1 -1.5707996938995747
+    }
+    frontBSlot TinkerbotsCubieTriangle {
+    }
+  }
+  extensionSlot [
+    Pen {
+    }
+  ]
 }
