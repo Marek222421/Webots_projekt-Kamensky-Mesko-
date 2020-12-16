@@ -36,7 +36,7 @@ distance = wb_distance_sensor_get_value(ds);
 
 if distance < 120
 wb_motor_set_velocity(motor_left, 0);
-wb_motor_set_velocity(motor_right, -5);
+wb_motor_set_velocity(motor_right, -7);
 else
 wb_motor_set_velocity(motor_left, 10);
 wb_motor_set_velocity(motor_right, 10);
