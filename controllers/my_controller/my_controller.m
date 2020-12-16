@@ -21,9 +21,9 @@ pen = wb_robot_get_device('pen');
 ds = wb_robot_get_device('ds')
 
 wb_motor_set_position(motor_left, inf);
-wb_motor_set_velocity(motor_left, 20);
+wb_motor_set_velocity(motor_left, 1);
 wb_motor_set_position(motor_right, inf);
-wb_motor_set_velocity(motor_right, 20);
+wb_motor_set_velocity(motor_right, 1);
 wb_pen_write(pen, 1);
 wb_distance_sensor_enable(ds, TIME_STEP);
 
@@ -34,12 +34,12 @@ wb_distance_sensor_enable(ds, TIME_STEP);
 while wb_robot_step(TIME_STEP) ~= -1
 distance = wb_distance_sensor_get_value(ds);
 
-if distance < 120
-wb_motor_set_velocity(motor_left, 0);
-wb_motor_set_velocity(motor_right, -5);
+if distance < 100
+wb_motor_set_velocity(motor_left, 1);
+wb_motor_set_velocity(motor_right, -1);
 else
-wb_motor_set_velocity(motor_left, 10);
-wb_motor_set_velocity(motor_right, 10);
+wb_motor_set_velocity(motor_left, 1);
+wb_motor_set_velocity(motor_right, 1);
 end
 
   % read the sensors, e.g.:
