@@ -15,13 +15,32 @@ TIME_STEP = 64;
 % get and enable devices, e.g.:
 %  camera = wb_robot_get_device('camera');
 %  wb_camera_enable(camera, TIME_STEP);
-%  motor = wb_robot_get_device('motor');
+motor_left = wb_robot_get_device('motor_left');
+motor_right = wb_robot_get_device('motor_right');
+pen = wb_robot_get_device('pen');
+ds = wb_robot_get_device('ds')
+
+wb_motor_set_position(motor_left, inf);
+wb_motor_set_velocity(motor_left, 20);
+wb_motor_set_position(motor_right, inf);
+wb_motor_set_velocity(motor_right, 20);
+wb_pen_write(pen, 1);
+wb_distance_sensor_enable(ds, TIME_STEP);
 
 % main loop:
 % perform simulation steps of TIME_STEP milliseconds
 % and leave the loop when Webots signals the termination
 %
 while wb_robot_step(TIME_STEP) ~= -1
+distance = wb_distance_sensor_get_value(ds);
+
+if distance < 120
+wb_motor_set_velocity(motor_left, 0);
+wb_motor_set_velocity(motor_right, -5);
+else
+wb_motor_set_velocity(motor_left, 10);
+wb_motor_set_velocity(motor_right, 10);
+end
 
   % read the sensors, e.g.:
   %  rgb = wb_camera_get_image(camera);
